@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import ProductCard from '../component/ProductCard';
-import { Container, Row, Col} from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import ProductCard from "../component/ProductCard";
+import { Container, Row, Col } from "react-bootstrap";
 
 const ProductAll = () => {
-  const [productList, setProductList] = useState([])
+  const [productList, setProductList] = useState([]);
   const getProducts = async () => {
-    let url = `http://localhost:5000/products`
+    let url = `https://my-json-server.typicode.com/kimsunok7/shoppingmall/products`;
     let response = await fetch(url);
-    let data = await response.json()
-    console.log(data)
-    setProductList(data)
-  }
-  useEffect(() =>{
+    let data = await response.json();
+    console.log(data);
+    setProductList(data);
+  };
+  useEffect(() => {
     getProducts();
-  }, [])
+  }, []);
   return (
     <div>
       {/* 전체 상품 페이지 */}
@@ -27,9 +27,8 @@ const ProductAll = () => {
           ))}
         </Row>
       </Container>
-      
     </div>
-  )
-}
+  );
+};
 
-export default ProductAll
+export default ProductAll;

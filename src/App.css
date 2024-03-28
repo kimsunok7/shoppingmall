@@ -56,3 +56,9 @@ ul {
 .product img {
   width: 100%;
 }
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
+.card{margin-bottom:20px; border:none;}
+.choice{height:24px; color:red;}
